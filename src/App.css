@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#light {
+  background-color: white;
+}
+
+#dark {
+  background-color: #00201f;
+  color: #bcb;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.row>div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.row>div:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+.row>div:nth-child(4) {
+  animation-delay: 0.6s;
+}
+
+.row>div:nth-child(5) {
+  animation-delay: 0.8s;
+}
+
+.letter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  width: 75px;
+  height: 75px;
+  font-size: 50px;
+  margin-right: 10px;
+}
+
+.letter:last-child {
+  margin: 0;
+}
+
+.letter.green {
+  animation: flip 0.5s ease forwards;
+  --background: #0a5;
+}
+
+.letter.orange {
+  animation: flip 0.5s ease forwards;
+  --background: #cb4;
+}
+
+.letter.grey {
+  animation: flip 0.5s ease forwards;
+  --background: #888;
+}
+
+.switch {
+  position: absolute;
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch label {
+  margin: 10px;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateX(0);
+  }
+
+  45% {
+    transform: rotateX(90deg);
+  }
+
+  55% {
+    transform: rotateX(90deg);
+  }
+
+  100% {
+    transform: rotateX(0deg);
+    background-color: var(--background);
+    color: white;
+  }
+}
